@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novo Usuário</title>
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.css">
+</head>
+<body>
+    <header>
+        <h1>Blog TI 26</h1>            
+        <nav>
+            <a href="/">Home</a>
+            <a href="listagem-user.php">Lista Usuários</a>
+        </nav>
+    </header>
+
+    <h2>Novo Usuário</h2>
+    <form action="ctrl-novo-user.php" method="post">
+        <label>Nome:</label>
+        <input type="text" name="nome_user" required>
+
+        <label>Email:</label>
+        <input type="email" name="email_user" required>
+
+        <label>Senha:</label>
+        <input type="password" name="senha" required>
+
+        <label>Tipo:</label>
+        <select name="tipo">
+            <option value="usuario">Usuário</option>
+            <option value="admin">Admin</option>
+        </select>
+
+        <input type="submit" value="Cadastrar">
+    </form>
+</body>
+</html>

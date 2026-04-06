@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Equipe</title>
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.css">
+</head>
+<body>
+    <header>
+        <h1>Blog F1 26</h1>            
+        <nav>
+            <a href="/">Home</a>
+            <a href="listagem-equipe.php">Lista Equipes</a>
+        </nav>
+    </header>
+
+    <h2>Novo Usuário</h2>
+    <form action="ctrl-nova-equpe.php" method="post">
+        <label>Nome:</label>
+        <input type="text" name="nome_equipe" required>
+
+        <label>Pais:</label>
+        <input type="pais" name="pais_equipe" required>
+
+        <label>Base:</label>
+        <input type="base" name="base" required>
+        
+        <label>Temporada:</label>
+        <input type="anos" name="anos" required>
+        
+        <label>Titulos:</label>
+        <input type="titulos" name="titulos" required>
+
+        <label>Descrição:</label>
+        <textarea name="descricao_equipe" rows="4" cols="50"></textarea>
+        
+        <label>Status:</label>
+        <select name="status">
+            <option value="ativada">Ativa</option>
+            <option value="Desativada">Desativada</option>
+        </select>
+
+        <input type="submit" value="Cadastrar">
+    </form>
+</body>
+</html>
