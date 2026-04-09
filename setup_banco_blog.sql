@@ -30,7 +30,6 @@ CREATE TABLE circuitos(
     pais_circuito TEXT,
     cidade TEXT,
     extensao REAL,
-    voltas INTEGER,
     ano_gp INTEGER,
     regiao TEXT,
     descricao_circuito TEXT

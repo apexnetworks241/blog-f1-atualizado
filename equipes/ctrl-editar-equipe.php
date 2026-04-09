@@ -50,7 +50,7 @@ $id_equipe = $uma_equipe['id_equipe'];
         </nav>
     </header>
     <h2>Editar equipe</h2>
-    <form action="ctrl-nova-equpe.php" method="post">
+    <form action="ctrl-atualizar-equipe.php" method="post">
         <label>Nome:</label>
         <input type="text" name="nome_equipe" required value=<?=$nome_equipe?>>
 
@@ -68,9 +68,9 @@ $id_equipe = $uma_equipe['id_equipe'];
 
         <label>Descrição:</label>
         <textarea name="descricao_equipe" rows="4" cols="50">
-            <?=$descricao_equipe?>
+<?=$descricao_equipe?>
         </textarea>
-        
+        <input type="hidden" name="id_equipe" value=<?=$id_equipe?>> 
         <label>Status:</label>
         <select name="status">
             <option value="ativada">Ativa</option>

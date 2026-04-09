@@ -52,25 +52,25 @@ $id_circuito = $um_circuito['id_circuito'];
     <h2>Editar equipe</h2>
     <form action="ctrl-nova-equpe.php" method="post">
         <label>Nome:</label>
-        <input type="text" name="nome_equipe" required value=<?=$nome_circuito?>>
+        <input type="nome" name="nome_equipe" required value=<?=$nome_circuito?>>
 
         <label>Pais:</label>
         <input type="pais" name="pais_equipe" required value=<?=$pais_circuito?>>
 
         <label>Cidade:</label>
-        <input type="base" name="base" required value=<?=$cidade?>>
+        <input type="cidade" name="base" required value=<?=$cidade?>>
         
         <label>Tamanho:</label>
-        <input type="anos" name="anos" required value=<?=$extensao?>>
+        <input type="extensao" name="extensao" required value=<?=$extensao?>>
         
         <label>Temporadas:</label>
-        <input type="titulos" name="titulos" required value=<?=$ano_gp?>>
+        <input type="ano" name="ano" required value=<?=$ano_gp?>>
 
         <label>Regiao:</label>
-        <input type="titulos" name="titulos" required value=<?=$regiao?>>
+        <input type="regiao" name="regiao" required value=<?=$regiao?>>
 
         <label>Descrição:</label>
-        <textarea name="descricao_equipe" rows="4" cols="50">
+        <textarea name="descricao_circuito" rows="4" cols="50">
             <?=$descricao_circuito?>
 </textarea>
 
