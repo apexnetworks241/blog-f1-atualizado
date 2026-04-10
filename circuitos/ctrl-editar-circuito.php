@@ -71,9 +71,9 @@ $id_circuito = $um_circuito['id_circuito'];
 
         <label>Descrição:</label>
         <textarea name="descricao_circuito" rows="4" cols="50">
-            <?=$descricao_circuito?>
-</textarea>
-
+<?=$descricao_circuito?>
+        </textarea>
+        <input type="hidden" name="id_circuito" value=<?=$id_circuito?>> 
         <input type="submit" value="Atualizar">
     </form>
 </body>
