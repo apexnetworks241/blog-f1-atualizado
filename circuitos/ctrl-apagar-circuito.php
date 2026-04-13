@@ -7,15 +7,10 @@ $id_circuito = $_GET['id_circuito'];
 $conn = new PDO("sqlite:../banco.db");
 
 // 4. Prepared Statement
-
-
-
-$sql = "
-DELETE FROM citcuitos
+$stmt = $conn->prepare("
+DELETE FROM circuitos
 WHERE id_circuito = :id_circuito
-";
-
-$stmt = $conn->prepare($sql);
+");
 
 // Passamos os valores antes de executar o comando
 $stmt->bindValue(':id_circuito', $id_circuito);

@@ -8,8 +8,6 @@ $conn = new PDO("sqlite:../banco.db");
 
 // 4. Prepared Statement
 
-
-
 $sql = "
 DELETE FROM equipes
 WHERE id_equipe = :id_equipe

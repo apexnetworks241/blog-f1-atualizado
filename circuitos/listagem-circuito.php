@@ -22,10 +22,10 @@ $result_set_circuitos = $conn->query($sql_dados_equipes);
 </head>
 <body>
     <header>
-        <h1>Listagem de usuários</h1>
+        <h1>Listagem de circuito</h1>
             <nav>
                 <a href="/">Home</a>
-                <a href="nova-equipe.html">Adicionar Equipe</a>
+                <a href="novo-circuito.html">Adicionar circuito</a>
             </nav>
     </header>
     <table>
@@ -34,42 +34,43 @@ $result_set_circuitos = $conn->query($sql_dados_equipes);
                 <th>Nome</th>
                 <th>Pais</th>
                 <th>Cidade</th>
+                <th>Extensão</th>
                 <th>Temporadas</th>
-                <th></th>
-                <th>Status</th>
+                <th>Região</th>
                 <th>Descrição</th>
                 <th>Comandos</th>
             </tr>
         </thead>
         <tbody>
             <?php
-            while ($uma_equipe = $result_set_equipes->fetch(PDO::FETCH_ASSOC)) {
-                $nome_equipe  = $uma_equipe['nome_equipe'];
-                $pais_equipe = $uma_equipe['pais_equipe'];
-                $base = $uma_equipe['base'];
-                $anos = $uma_equipe['anos'];
-                $titulos = $uma_equipe['titulos'];
-                $descricao_equipe = $uma_equipe['descricao_equipe'];
-                $status = $uma_equipe['status'];
-                $id_equipe = $uma_equipe['id_equipe'];
-
-                $linha_com_equipe = "
+            while ($um_circuito = $result_set_circuitos->fetch(PDO::FETCH_ASSOC)) {
+                
+                $nome_circuito  = $um_circuito['nome_circuito'];
+                $pais_circuito = $um_circuito['pais_circuito'];
+                $cidade = $um_circuito['cidade'];
+                $extensao = $um_circuito['extensao'];
+                $ano_gp = $um_circuito['ano_gp'];
+                $regiao = $um_circuito['regiao'];
+                $descricao_circuito = $um_circuito['descricao_circuito'];
+                $id_circuito = $um_circuito['id_circuito'];
+                                
+                $linha_com_circuito = "
                 <tr>
-                    <td>$nome_equipe</td>
-                    <td>$pais_equipe</td>
-                    <td>$base</td>
-                    <td>$anos</td>
-                    <td>$titulos</td>
-                    <td>$status</td>
-                    <td>$descricao_equipe</td>
+                    <td>$nome_circuito</td>
+                    <td>$pais_circuito</td>
+                    <td>$cidade</td>
+                    <td>$extensao</td>
+                    <td>$ano_gp</td>
+                    <td>$regiao</td>
+                    <td>$descricao_circuito</td>
                     <td>
-                    <a href='ctrl-apagar-equipe.php?id_equipe=$id_equipe'>🗑️</a>
-                    <a href='ctrl-editar-equipe.php?id_equipe=$id_equipe'>✏️</a>
+                    <a href='ctrl-apagar-circuito.php?id_circuito=$id_circuito'>🗑️</a>
+                    <a href='ctrl-editar-circuito.php?id_circuito=$id_circuito'>✏️</a>
                     </td>
                 </tr>
                 ";
 
-                echo $linha_com_equipe;
+                echo $linha_com_circuito;
             }
             ?>
         </tbody>
