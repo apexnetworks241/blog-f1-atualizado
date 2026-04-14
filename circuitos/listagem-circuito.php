@@ -25,7 +25,7 @@ $result_set_circuitos = $conn->query($sql_dados_equipes);
         <h1>Listagem de circuito</h1>
             <nav>
                 <a href="/">Home</a>
-                <a href="novo-circuito.html">Adicionar circuito</a>
+                <a href="/circuitos.php">Circuitos</a>
             </nav>
     </header>
     <table>

@@ -16,7 +16,7 @@ FROM circuitos
 WHERE id_circuito = :id_circuito;
 ";
 
-$stmt = $conn->prepare($sql_dados_equipes);
+$stmt = $conn->prepare($sql_dados_circuito);
 $stmt->bindValue(':id_circuito', $id_circuito);
 $stmt->execute();
 
@@ -38,7 +38,7 @@ $id_circuito = $um_circuito['id_circuito'];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar equipe</title>
+    <title>Editar circuito</title>
     <link rel="stylesheet" href="https://cdn.simplecss.org/simple.css">
 </head>
 <body>
@@ -46,25 +46,25 @@ $id_circuito = $um_circuito['id_circuito'];
         <h1>Blog TI 26</h1>
         <nav>
             <a href="/">Home</a>
-            <a href="nova-equipe.html">Adicionar equipe</a>
+            <a href="/circuitos.php">Circuitos</a>
         </nav>
     </header>
-    <h2>Editar equipe</h2>
-    <form action="ctrl-nova-equpe.php" method="post">
+    <h2>Editar circuito</h2>
+    <form action="ctrl-atualizar-circuito.php" method="post">
         <label>Nome:</label>
-        <input type="nome" name="nome_equipe" required value=<?=$nome_circuito?>>
+        <input type="nome" name="nome_circuito" required value=<?=$nome_circuito?>>
 
         <label>Pais:</label>
-        <input type="pais" name="pais_equipe" required value=<?=$pais_circuito?>>
+        <input type="pais" name="pais_circuito" required value=<?=$pais_circuito?>>
 
         <label>Cidade:</label>
-        <input type="cidade" name="base" required value=<?=$cidade?>>
+        <input type="cidade" name="cidade" required value=<?=$cidade?>>
         
         <label>Tamanho:</label>
         <input type="extensao" name="extensao" required value=<?=$extensao?>>
         
         <label>Temporadas:</label>
-        <input type="ano" name="ano" required value=<?=$ano_gp?>>
+        <input type="ano" name="ano_gp" required value=<?=$ano_gp?>>
 
         <label>Regiao:</label>
         <input type="regiao" name="regiao" required value=<?=$regiao?>>

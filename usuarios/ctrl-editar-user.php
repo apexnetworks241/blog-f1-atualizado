@@ -42,7 +42,7 @@ $id_usuario = $um_usuario['id_usuario'];
         <h1>Blog TI 26</h1>
         <nav>
             <a href="index.php">Home</a>
-            <a href="novo-user.html">Novo usuário</a>
+            <a href="/usuarios.php">Usuarios</a>
         </nav>
     </header>
     <h2>Editar usuário</h2>

@@ -17,7 +17,7 @@ require "index_model.php";
         <nav>
             <a href="index.php">Home</a>
             <a href="usuarios/listagem-user.php">Lista de usuarios</a>
-            <a href="equipes/nova-equipe.html">Adicionar Equipe</a>
+            <a href="usuarios/novo-user.html">Adicionar usuario</a>
         </nav>
     </header>
 

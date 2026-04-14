@@ -46,7 +46,7 @@ $id_equipe = $uma_equipe['id_equipe'];
         <h1>Blog TI 26</h1>
         <nav>
             <a href="/">Home</a>
-            <a href="nova-equipe.html">Adicionar equipe</a>
+            <a href="/equipes.php">Equipes</a>
         </nav>
     </header>
     <h2>Editar equipe</h2>

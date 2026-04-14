@@ -25,7 +25,7 @@ $result_set_usuarios = $conn->query($sql_dados_usuarios);
         <h1>Listagem de usuários</h1>
             <nav>
                 <a href="/">Home</a>
-                <a href="novo-user.html">Novo usuario</a>
+                <a href="/usuarios.php">Usuarios</a>
             </nav>
     </header>
     <table>

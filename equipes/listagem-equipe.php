@@ -25,7 +25,7 @@ $result_set_equipes = $conn->query($sql_dados_equipes);
         <h1>Listagem de usuários</h1>
             <nav>
                 <a href="/">Home</a>
-                <a href="nova-equipe.html">Adicionar Equipe</a>
+                <a href="/equipes.php">Equipes</a>
             </nav>
     </header>
     <table>
