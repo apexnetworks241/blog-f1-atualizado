@@ -1,5 +1,5 @@
 <?php
-require "index_model.php";
+require "equipes_model.php";
 ?>
 
 <!DOCTYPE html>
@@ -23,20 +23,26 @@ require "index_model.php";
 
     <main>
         <section>
-            <h2>Usuários</h2>
+            <h2>Equipes</h2>
 
             <?php
-            while ($dados_usuarios = $result_set_usuarios->fetch(PDO::FETCH_ASSOC)) {
+            while ($dados_equipes = $result_set_equipes->fetch(PDO::FETCH_ASSOC)) {
 
-                $nome_user  = $dados_usuarios['nome_user'];
-                $email_user = $dados_usuarios['email_user'];
-                $tipo       = $dados_usuarios['tipo'];
+                $nome_equipe  = $dados_equipes['nome_equipe'];
+                $pais_equipe = $dados_equipes['pais_equipe'];
+                $base       = $dados_equipes['base'];
+                $anos       = $dados_equipes['anos'];
+                $titulos       = $dados_equipes['titulos'];
+                $descricao_equipe       = $dados_equipes['descricao_equipe'];
 
                 $template = "
                 <article>
-                    <p><strong>$nome_user</strong></p>
-                    <p>Email: $email_user</p>
-                    <p>Tipo: $tipo</p>
+                    <p><strong>$nome_equipe</strong></p>
+                    <p>Pais: $pais_equipe</p>
+                    <p>Base: $base</p>
+                    <p>Temporadas: $anos</p>
+                    <p>Titulos: $titulos</p>
+                    <p>Descrição: $descricao_equipe</p>
                 </article>
                 ";
 

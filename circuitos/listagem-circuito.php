@@ -6,13 +6,13 @@
 
 $conn = new PDO("sqlite:../banco.db");
 
-$sql_dados_equipes = "
+$sql_dados_circuitos = "
 SELECT id_circuito, nome_circuito, pais_circuito, cidade, extensao, ano_gp, regiao, descricao_circuito
 FROM circuitos
 ORDER BY id_circuito DESC;
 ";
 
-$result_set_circuitos = $conn->query($sql_dados_equipes);
+$result_set_circuitos = $conn->query($sql_dados_circuitos);
 ?>
 
 <!DOCTYPE html>

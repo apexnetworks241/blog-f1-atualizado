@@ -7,7 +7,7 @@
 $conn = new PDO("sqlite:../banco.db");
 
 $sql_dados_equipes = "
-SELECT id_equipe, nome_equipe, pais_equipe, base, anos, titulos, status, descricao_equipe
+SELECT id_equipe, nome_equipe, pais_equipe, base, anos, titulos, descricao_equipe
 FROM equipes
 ORDER BY id_equipe DESC;
 ";
@@ -36,7 +36,6 @@ $result_set_equipes = $conn->query($sql_dados_equipes);
                 <th>Base</th>
                 <th>Temporadas</th>
                 <th>Titulos</th>
-                <th>Status</th>
                 <th>Descrição</th>
                 <th>Comandos</th>
             </tr>
@@ -50,7 +49,6 @@ $result_set_equipes = $conn->query($sql_dados_equipes);
                 $anos = $uma_equipe['anos'];
                 $titulos = $uma_equipe['titulos'];
                 $descricao_equipe = $uma_equipe['descricao_equipe'];
-                $status = $uma_equipe['status'];
                 $id_equipe = $uma_equipe['id_equipe'];
 
                 $linha_com_equipe = "
@@ -60,7 +58,6 @@ $result_set_equipes = $conn->query($sql_dados_equipes);
                     <td>$base</td>
                     <td>$anos</td>
                     <td>$titulos</td>
-                    <td>$status</td>
                     <td>$descricao_equipe</td>
                     <td>
                     <a href='ctrl-apagar-equipe.php?id_equipe=$id_equipe'>🗑️</a>

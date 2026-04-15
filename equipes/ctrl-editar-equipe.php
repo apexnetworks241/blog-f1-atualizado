@@ -11,7 +11,7 @@ $conn = new PDO("sqlite:../banco.db");
 
 // SELECT usando id como filtro
 $sql_dados_equipes = "
-SELECT id_equipe, nome_equipe, pais_equipe, base, anos, titulos, descricao_equipe, status
+SELECT id_equipe, nome_equipe, pais_equipe, base, anos, titulos, descricao_equipe
 FROM equipes
 WHERE id_equipe = :id_equipe;
 ";
@@ -29,7 +29,6 @@ $base = $uma_equipe['base'];
 $anos = $uma_equipe['anos'];
 $titulos = $uma_equipe['titulos'];
 $descricao_equipe = $uma_equipe['descricao_equipe'];
-$status = $uma_equipe['status'];
 $id_equipe = $uma_equipe['id_equipe'];
 ?>
 
@@ -71,12 +70,6 @@ $id_equipe = $uma_equipe['id_equipe'];
 <?=$descricao_equipe?>
         </textarea>
         <input type="hidden" name="id_equipe" value=<?=$id_equipe?>> 
-        <label>Status:</label>
-        <select name="status">
-            <option value="ativada">Ativa</option>
-            <option value="Desativada">Desativada</option>
-        </select>
-
         <input type="submit" value="Atualizar">
     </form>
 </body>

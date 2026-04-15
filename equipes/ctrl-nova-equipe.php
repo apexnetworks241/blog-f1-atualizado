@@ -6,14 +6,13 @@ $pais_equipe = $_POST['pais_equipe'];
 $base = $_POST['base'];
 $anos = $_POST['anos'];
 $titulos = $_POST['titulos'];
-$status = $_POST['status'] ?? 'ativa'; // valor padrão caso não enviado
 $descricao_equipe = $_POST['descricao_equipe'];
 
 // 2. Montar instrução SQL (INSERT)
 
 $sql = "
-INSERT INTO equipes (nome_equipe, pais_equipe, base, anos, titulos, status, descricao_equipe)
-VALUES (:nome_equipe, :pais_equipe, :base, :anos, :titulos, :status, :descricao_equipe);
+INSERT INTO equipes (nome_equipe, pais_equipe, base, anos, titulos, descricao_equipe)
+VALUES (:nome_equipe, :pais_equipe, :base, :anos, :titulos, :descricao_equipe);
 ";
 
 // 3. Conectar com o banco
@@ -31,7 +30,6 @@ $stmt->bindValue(':pais_equipe', $pais_equipe);
 $stmt->bindValue(':base', $base);
 $stmt->bindValue(':anos', $anos);
 $stmt->bindValue(':titulos', $titulos);
-$stmt->bindValue(':status', $status);
 $stmt->bindValue(':descricao_equipe', $descricao_equipe);
 
 // 6. Executamos o comando

@@ -6,7 +6,6 @@ $pais_equipe = $_POST['pais_equipe'];
 $base = $_POST['base'];
 $anos = $_POST['anos'];
 $titulos = $_POST['titulos'];
-$status = $_POST['status'] ?? 'ativa'; // valor padrão caso não enviado
 $descricao_equipe = $_POST['descricao_equipe'];
 $id_equipe = $_POST['id_equipe'];
 
@@ -19,8 +18,7 @@ SET nome_equipe  = :nome_equipe,
     base = :base,
     anos = :anos,
     titulos = :titulos,
-    descricao_equipe = :descricao_equipe,
-    status = :status
+    descricao_equipe = :descricao_equipe
     
 WHERE id_equipe = :id_equipe;
 ";
@@ -40,7 +38,6 @@ $stmt->bindValue(':pais_equipe', $pais_equipe);
 $stmt->bindValue(':base', $base);
 $stmt->bindValue(':anos', $anos);
 $stmt->bindValue(':titulos', $titulos);
-$stmt->bindValue(':status', $status);
 $stmt->bindValue(':descricao_equipe', $descricao_equipe);
 $stmt->bindValue(':id_equipe', $id_equipe);
 

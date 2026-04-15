@@ -1,5 +1,5 @@
 <?php
-require "index_model.php";
+require "circuitos_model.php";
 ?>
 
 <!DOCTYPE html>
@@ -23,20 +23,29 @@ require "index_model.php";
 
     <main>
         <section>
-            <h2>Usuários</h2>
+            <h2>Circuitos
+            </h2>
 
             <?php
-            while ($dados_usuarios = $result_set_usuarios->fetch(PDO::FETCH_ASSOC)) {
+            while ($dados_circuitos = $result_set_circuitos->fetch(PDO::FETCH_ASSOC)) {
 
-                $nome_user  = $dados_usuarios['nome_user'];
-                $email_user = $dados_usuarios['email_user'];
-                $tipo       = $dados_usuarios['tipo'];
+                $nome_circuito  = $dados_circuitos['nome_circuito'];
+                $pais_circuito = $dados_circuitos['pais_circuito'];
+                $cidade = $dados_circuitos['cidade'];
+                $extensao = $dados_circuitos['extensao'];
+                $ano_gp = $dados_circuitos['ano_gp'];
+                $regiao = $dados_circuitos['regiao'];
+                $descricao_circuito = $dados_circuitos['descricao_circuito'];
 
                 $template = "
                 <article>
-                    <p><strong>$nome_user</strong></p>
-                    <p>Email: $email_user</p>
-                    <p>Tipo: $tipo</p>
+                    <p><strong>$nome_circuito</strong></p>
+                    <p>Pais: $pais_circuito</p>
+                    <p>Cidade: $cidade</p>
+                    <p>Tamanho: $extensao</p>
+                    <p>Temporadas: $ano_gp</p>
+                    <p>Regiao: $regiao</p>
+                    <p>Descrição: $descricao_circuito</p>
                 </article>
                 ";
 
