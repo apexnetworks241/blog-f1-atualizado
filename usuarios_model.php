@@ -11,23 +11,13 @@ $blog_autor     = "Willian";
 $blog_email_adm = "willian@gmail.com";
 
 // Consulta de usuários
-$sql_top_equipes = "
-SELECT nome_equipe, pais_equipe, titulos
-FROM equipes
-ORDER BY titulos DESC
-LIMIT 3
+$sql_dados_usuarios = "
+SELECT id_usuario, nome_user, email_user, senha, tipo
+FROM usuarios
+ORDER BY id_usuario DESC;
 ";
 
 // Rodamos a consulta — nome consistente usado em index.php
-$result_top_equipes = $conn->query($sql_top_equipes);
-
-$sql_top_circuitos = "
-SELECT nome_circuito, pais_circuito, cidade, ano_gp
-FROM circuitos
-ORDER BY ano_gp DESC
-LIMIT 3
-";
-
-$result_top_circuitos = $conn->query($sql_top_circuitos);
+$result_set_usuarios = $conn->query($sql_dados_usuarios);
 
 ?>

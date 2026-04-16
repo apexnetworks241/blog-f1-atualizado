@@ -21,6 +21,30 @@ require "index_model.php";
         </nav>
     </header>
 
+    <section>
+    <h2>Equipes com mais títulos</h2>
+        <?php while ($equipe = $result_top_equipes->fetch(PDO::FETCH_ASSOC)) { ?>
+            <div>
+                <article>
+                <h3><?= $equipe['nome_equipe'] ?></h3>
+                    <p><strong>País:</strong> <?= $equipe['pais_equipe'] ?></p>
+                    <p><strong>Títulos:</strong> <?= $equipe['titulos'] ?></p>
+                </article>
+        </div>
+        <?php } ?>
+        <hr>
+    <h2>Circuitos com mais temporadas</h2>
+        <?php while ($circuito = $result_top_circuitos->fetch(PDO::FETCH_ASSOC)) { ?>
+            <div>
+                <article>
+                <h3><?= $circuito['nome_circuito'] ?></h3>
+                    <p><strong>País:</strong> <?= $circuito['pais_circuito'] ?></p>
+                    <p><strong>Cidade:</strong> <?= $circuito['cidade'] ?></p>
+                    <p><strong>Temporadas:</strong> <?= $circuito['ano_gp'] ?></p>
+                </article>
+            </div>
+        <?php } ?>
+    </section>
     <footer>
         <?= $blog_nome ?> - <?= $blog_autor ?> - <?= $blog_email_adm ?>
     </footer>
