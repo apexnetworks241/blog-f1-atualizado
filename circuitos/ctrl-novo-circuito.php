@@ -44,5 +44,5 @@ $id = $conn->lastInsertId();
 
 // 8. Redirecionamos para a listagem
 
-require "listagem-circuito.php";
+require "novo-circuito.html";
 ?>
