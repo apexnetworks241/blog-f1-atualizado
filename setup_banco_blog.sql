@@ -5,7 +5,7 @@
 DROP TABLE IF EXISTS usuarios;
 DROP TABLE IF EXISTS circuitos;
 DROP TABLE IF EXISTS equipes;
-DROP TABLE IF EXISTS posts;
+DROP TABLE IF EXISTS novidades;
 DROP TABLE IF EXISTS perfil;
 
 CREATE TABLE usuarios(
@@ -42,24 +42,17 @@ CREATE TABLE equipes (
     base TEXT,
     anos TEXT,
     titulos INTEGER,
-    status BOOLEAN,
     descricao_equipe TEXT
 );
 
-CREATE TABLE IF NOT EXISTS posts (
-    id_posts INTEGER PRIMARY KEY AUTOINCREMENT,
-    titulo_post TEXT,
-    conteudo_post TEXT,
-    usuario_id INTEGER,
-    circuito_id INTEGER,
-    equipe_id INTEGER,
-    FOREIGN KEY (usuario_id)  REFERENCES usuarios(id)  ON DELETE CASCADE,
-    FOREIGN KEY (circuito_id) REFERENCES circuitos(id) ON DELETE SET NULL,
-    FOREIGN KEY (equipe_id)   REFERENCES equipes(id)   ON DELETE SET NULL
+CREATE TABLE IF NOT EXISTS novidades  (
+    id_novidades INTEGER PRIMARY KEY AUTOINCREMENT,
+    titulo TEXT,
+    conteudo TEXT,
+    data_pub TEXT
 );
 
 PRAGMA table_info (usuarios);
 PRAGMA table_info (circuitos);
 PRAGMA table_info (equipes);
-PRAGMA table_info (posts);
-PRAGMA table_info (perfil);
+PRAGMA table_info (novidades);
