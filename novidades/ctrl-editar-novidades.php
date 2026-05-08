@@ -21,15 +21,12 @@ $stmt->bindValue(':id_novidades', $id_novidades);
 $stmt->execute();
 
 // Pegamos os dados do usuário
-$uma_equipe = $stmt->fetch(PDO::FETCH_ASSOC);
+$uma_novidade = $stmt->fetch(PDO::FETCH_ASSOC);
 
-$nome_equipe  = $uma_equipe['nome_equipe'];
-$pais_equipe = $uma_equipe['pais_equipe'];
-$base = $uma_equipe['base'];
-$anos = $uma_equipe['anos'];
-$titulos = $uma_equipe['titulos'];
-$descricao_equipe = $uma_equipe['descricao_equipe'];
-$id_equipe = $uma_equipe['id_equipe'];
+$titulo  = $uma_novidade['titulo'];
+$conteudo = $uma_novidade['conteudo'];
+$data_pub = $uma_novidade['data_pub'];
+$id_novidades = $uma_novidade['id_novidades'];
 ?>
 
 <!DOCTYPE html>
@@ -45,31 +42,22 @@ $id_equipe = $uma_equipe['id_equipe'];
         <h1>Blog TI 26</h1>
         <nav>
             <a href="/">Home</a>
-            <a href="/equipes.php">Equipes</a>
+            <a href="/Novidades.php">Novidades</a>
         </nav>
     </header>
-    <h2>Editar equipe</h2>
-    <form action="ctrl-atualizar-equipe.php" method="post">
-        <label>Nome:</label>
-        <input type="text" name="nome_equipe" required value=<?=$nome_equipe?>>
+    <h2>Editar Novidade</h2>
+    <form action="ctrl-atualizar-novidades.php" method="post">
+        <label>Titulo:</label>
+        <input type="text" name="titulo" required value=<?=$titulo?>>
 
-        <label>Pais:</label>
-        <input type="pais" name="pais_equipe" required value=<?=$pais_equipe?>>
+        <label>Data:</label>
+        <input type="date" name="data_pub" required value=<?=$data_pub?>>
 
-        <label>Base:</label>
-        <input type="base" name="base" required value=<?=$base?>>
-        
-        <label>Temporada:</label>
-        <input type="anos" name="anos" required value=<?=$anos?>>
-        
-        <label>Titulos:</label>
-        <input type="titulos" name="titulos" required value=<?=$titulos?>>
-
-        <label>Descrição:</label>
-        <textarea name="descricao_equipe" rows="4" cols="50">
-<?=$descricao_equipe?>
+        <label>conteudo:</label>
+        <textarea name="conteudo" rows="4" cols="50">
+<?=$conteudo?>
         </textarea>
-        <input type="hidden" name="id_equipe" value=<?=$id_equipe?>> 
+        <input type="hidden" name="id_novidades" value=<?=$id_novidades?>> 
         <input type="submit" value="Atualizar">
     </form>
 </body>

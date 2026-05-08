@@ -30,4 +30,13 @@ LIMIT 3
 
 $result_top_circuitos = $conn->query($sql_top_circuitos);
 
+$sql_top_novidades = "
+SELECT titulo, conteudo, data_pub
+FROM novidades
+ORDER BY data_pub DESC
+LIMIT 3
+";
+
+$result_top_novidades = $conn->query($sql_top_novidades);
+
 ?>

@@ -1,49 +1,41 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header('Location: nova-novidade.php');
-    exit;
-}
+// 1. Receber dados do formulário
 
-$db_path = __DIR__ . '/blog_f1.db';
+$titulo  = $_POST['titulo'];
+$conteudo = $_POST['conteudo'];
 
-$titulo   = trim($_POST['titulo']   ?? '');
-$conteudo = trim($_POST['conteudo'] ?? '');
 $data_pub = date('Y-m-d');
+//$data_pub      = $_POST['data_pub'];
+// 2. Montar instrução SQL (INSERT)
 
-if ($titulo === '' || $conteudo === '') {
-    header('Location: nova-novidade.php?status=erro');
-    exit;
-}
+$sql = "
+INSERT INTO novidades (titulo, conteudo, data_pub)
+VALUES (:titulo, :conteudo, :data_pub);
+";
 
-try {
-    $pdo = new PDO('sqlite:' . $db_path);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+// 3. Conectar com o banco
 
-    $pdo->exec("
-        CREATE TABLE IF NOT EXISTS novidades (
-            id_novidades INTEGER PRIMARY KEY AUTOINCREMENT,
-            titulo       TEXT NOT NULL,
-            conteudo     TEXT NOT NULL,
-            data_pub     TEXT NOT NULL
-        )
-    ");
+$conn = new PDO("sqlite:../banco.db");
 
-    $stmt = $pdo->prepare("
-        INSERT INTO novidades (titulo, conteudo, data_pub)
-        VALUES (:titulo, :conteudo, :data_pub)
-    ");
+// 4. Prepared Statement
 
-    $stmt->execute([
-        ':titulo'   => $titulo,
-        ':conteudo' => $conteudo,
-        ':data_pub' => $data_pub,
-    ]);
+$stmt = $conn->prepare($sql);
 
-    header('Location: nova-novidade.php?status=ok');
-    exit;
+// 5. Passamos os valores antes de executar o comando
 
-} catch (PDOException $e) {
-    error_log('Erro ao salvar novidade: ' . $e->getMessage());
-    header('Location: nova-novidade.php?status=erro');
-    exit;
-}
+$stmt->bindValue(':titulo', $titulo);
+$stmt->bindValue(':conteudo', $conteudo);
+$stmt->bindValue(':data_pub', $data_pub);
+
+// 6. Executamos o comando
+
+$stmt->execute();
+
+// 7. Pegamos o valor do ID do novo registro
+
+$id = $conn->lastInsertId();
+
+// 8. Redirecionamos para a listagem
+
+require "listagem-novidades.php";
+?>

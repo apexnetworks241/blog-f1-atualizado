@@ -29,6 +29,7 @@ require "index_model.php";
         <h1><?= $blog_nome ?></h1>
         <nav>
             <a href="usuarios.php">Usuários</a>
+            <a href="Novidades.php">Novidades</a>
             <a href="equipes.php">Equipes</a>
             <a href="circuitos.php">Circuitos</a>
         </nav>
@@ -39,15 +40,15 @@ require "index_model.php";
         <!-- SLIDE 1: Novidades (topo, largura total) -->
         <article>
             <h2>Últimas Novidades</h2>
-            <?php while ($novidade = $result_novidades->fetch(PDO::FETCH_ASSOC)) { ?>
+            <?php while ($novidade = $result_top_novidades->fetch(PDO::FETCH_ASSOC)) { ?>
                 <div>
                     <h3><?= $novidade['titulo'] ?></h3>
-                    <p><strong>Data:</strong> <?= $novidade['data_pub'] ?></p>
+                    <p><strong>Data:</strong> <?= date('d/m/y', strtotime($novidade['data_pub'])) ?></p>
                     <p><?= $novidade['conteudo'] ?></p>
                 </div>
                 <hr>
             <?php } ?>
-        </article>
+        </article>  
 
         <!-- SLIDES 2 e 3: Equipes e Circuitos lado a lado -->
         <div class="grid-baixo">

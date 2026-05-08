@@ -9,7 +9,7 @@ $conn = new PDO("sqlite:../banco.db");
 // 4. Prepared Statement
 
 $sql = "
-DELETE FROM equipes
+DELETE FROM novidades
 WHERE id_novidades = :id_novidades
 ";
 
