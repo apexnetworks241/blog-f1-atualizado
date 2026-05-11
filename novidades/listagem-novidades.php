@@ -8,12 +8,16 @@ ORDER BY id_novidades DESC;
 ";
 
 $result_set_novidades = $conn->query($sql_dados_novidades);
+
+require "../auth.php"; // ou "auth.php" se for na raiz
+exigir_login();        // qualquer usuário logado
+// exigir_admin();     // só admins (ex: listagem de usuários)
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
     <header>

@@ -1,4 +1,6 @@
 <?php
+require "auth.php";
+exigir_login();
 require "index_model.php";
 ?>
 
@@ -8,7 +10,7 @@ require "index_model.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $blog_nome ?></title>
-    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.css">
+    <link rel="stylesheet" href="style.css">
     <style>
         .grid-baixo {
             display: grid;
@@ -32,6 +34,10 @@ require "index_model.php";
             <a href="Novidades.php">Novidades</a>
             <a href="equipes.php">Equipes</a>
             <a href="circuitos.php">Circuitos</a>
+            <?php if (is_admin()): ?>
+            <a href="usuarios.php" style="color: var(--f1-red);">⚙ Admin</a>
+            <?php endif; ?>
+            <a href="logout.php" style="margin-left:auto; color: var(--f1-muted);">Sair (<?= htmlspecialchars($_SESSION['nome_user']) ?>)</a>
         </nav>
     </header>
 

@@ -13,12 +13,16 @@ ORDER BY id_equipe DESC;
 ";
 
 $result_set_equipes = $conn->query($sql_dados_equipes);
+
+require "../auth.php"; // ou "auth.php" se for na raiz
+exigir_login();        // qualquer usuário logado
+// exigir_admin();     // só admins (ex: listagem de usuários)
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
     <header>

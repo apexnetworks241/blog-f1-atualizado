@@ -1,5 +1,9 @@
 <?php
 require "novidades_model.php";
+
+require "auth.php"; // ou "auth.php" se for na raiz
+exigir_login();        // qualquer usuário logado
+// exigir_admin();     // só admins (ex: listagem de usuários)
 ?>
 
 <!DOCTYPE html>
@@ -8,7 +12,7 @@ require "novidades_model.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $blog_nome ?></title>
-    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>

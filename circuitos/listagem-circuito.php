@@ -13,12 +13,16 @@ ORDER BY id_circuito DESC;
 ";
 
 $result_set_circuitos = $conn->query($sql_dados_circuitos);
+
+require "../auth.php"; // ou "auth.php" se for na raiz
+exigir_login();        // qualquer usuário logado
+// exigir_admin();     // só admins (ex: listagem de usuários)
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
     <header>

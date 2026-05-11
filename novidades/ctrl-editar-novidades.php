@@ -27,6 +27,10 @@ $titulo  = $uma_novidade['titulo'];
 $conteudo = $uma_novidade['conteudo'];
 $data_pub = $uma_novidade['data_pub'];
 $id_novidades = $uma_novidade['id_novidades'];
+
+require "../auth.php"; // ou "auth.php" se for na raiz
+exigir_login();        // qualquer usuário logado
+// exigir_admin();     // só admins (ex: listagem de usuários)
 ?>
 
 <!DOCTYPE html>
@@ -35,7 +39,7 @@ $id_novidades = $uma_novidade['id_novidades'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar equipe</title>
-    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
     <header>

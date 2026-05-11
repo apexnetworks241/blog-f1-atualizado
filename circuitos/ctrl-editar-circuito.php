@@ -31,6 +31,10 @@ $ano_gp = $um_circuito['ano_gp'];
 $regiao = $um_circuito['regiao'];
 $descricao_circuito = $um_circuito['descricao_circuito'];
 $id_circuito = $um_circuito['id_circuito'];
+
+require "../auth.php"; // ou "auth.php" se for na raiz
+exigir_login();        // qualquer usuário logado
+// exigir_admin();     // só admins (ex: listagem de usuários)
 ?>
 
 <!DOCTYPE html>
@@ -39,7 +43,7 @@ $id_circuito = $um_circuito['id_circuito'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar circuito</title>
-    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
     <header>

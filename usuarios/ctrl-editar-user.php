@@ -27,6 +27,10 @@ $nome_user  = $um_usuario['nome_user'];
 $email_user = $um_usuario['email_user'];
 $senha      = $um_usuario['senha'];
 $id_usuario = $um_usuario['id_usuario'];
+
+require "../auth.php"; // ou "auth.php" se for na raiz
+exigir_login();        // qualquer usuário logado
+// exigir_admin();     // só admins (ex: listagem de usuários)
 ?>
 
 <!DOCTYPE html>
@@ -35,7 +39,7 @@ $id_usuario = $um_usuario['id_usuario'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar usuário</title>
-    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
     <header>

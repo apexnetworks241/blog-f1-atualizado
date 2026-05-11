@@ -1,10 +1,16 @@
+<?php
+require "../auth.php"; // ou "auth.php" se for na raiz
+exigir_login();        // qualquer usuário logado
+// exigir_admin();     // só admins (ex: listagem de usuários)
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adicionar Equipe</title>
-    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
     <header>
@@ -15,7 +21,7 @@
         </nav>
     </header>
 
-    <h2>Novo Usuário</h2>
+    <h2>Nova Equipe</h2>
     <form action="ctrl-nova-equipe.php" method="post">
         <label>Nome:</label>
         <input type="text" name="nome_equipe" required>

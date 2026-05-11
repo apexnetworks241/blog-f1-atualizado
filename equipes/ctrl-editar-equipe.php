@@ -30,6 +30,10 @@ $anos = $uma_equipe['anos'];
 $titulos = $uma_equipe['titulos'];
 $descricao_equipe = $uma_equipe['descricao_equipe'];
 $id_equipe = $uma_equipe['id_equipe'];
+
+require "../auth.php"; // ou "auth.php" se for na raiz
+exigir_login();        // qualquer usuário logado
+// exigir_admin();     // só admins (ex: listagem de usuários)
 ?>
 
 <!DOCTYPE html>
@@ -38,7 +42,7 @@ $id_equipe = $uma_equipe['id_equipe'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar equipe</title>
-    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
     <header>
