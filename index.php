@@ -30,7 +30,6 @@ require "index_model.php";
     <header>
         <h1><?= $blog_nome ?></h1>
         <nav>
-            <a href="usuarios.php">Usuários</a>
             <a href="Novidades.php">Novidades</a>
             <a href="equipes.php">Equipes</a>
             <a href="circuitos.php">Circuitos</a>

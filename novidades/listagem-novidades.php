@@ -24,6 +24,7 @@ exigir_login();        // qualquer usuário logado
         <h1>Listagem de Novidades</h1>
             <nav>
                 <a href="/">Home</a>
+                <a href="/usuarios.php">Voltar</a>
                 <a href="/Novidades.php">Novidades</a>
             </nav>
     </header>

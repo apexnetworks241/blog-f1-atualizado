@@ -22,7 +22,7 @@ exigir_login();        // qualquer usuário logado
     </header>
 
     <h2>Novo Usuário</h2>
-    <form action="ctrl-novo-user.php" method="post">
+    <form  action="ctrl-novo-user.php" method="post">
         <label>Nome:</label>
         <input type="text" name="nome_user" required>
 

@@ -20,8 +20,6 @@ exigir_login();        // qualquer usuário logado
         <h1><?= $blog_nome ?></h1>
         <nav>
             <a href="index.php">Home</a>
-            <a href="circuitos/novo-circuito.html">Adicionar Circuitos</a>
-            <a href="circuitos/listagem-circuito.php">Lista de Circuitos</a>
         </nav>
     </header>
 

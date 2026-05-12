@@ -19,8 +19,6 @@ exigir_login();        // qualquer usuário logado
         <h1><?= $blog_nome ?></h1>
         <nav>
             <a href="index.php">Home</a>
-            <a href="equipes/nova-equipe.html">Adicionar Equipe</a>
-            <a href="equipes/listagem-equipe.php">Lista de equipes</a>
         </nav>
     </header>
 

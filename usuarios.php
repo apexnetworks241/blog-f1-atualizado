@@ -20,33 +20,28 @@ exigir_login();        // qualquer usuário logado
         <h1><?= $blog_nome ?></h1>
         <nav>
             <a href="index.php">Home</a>
-            <a href="usuarios/listagem-user.php">Lista de usuarios</a>
-            <a href="usuarios/novo-user.html">Adicionar usuario</a>
         </nav>
     </header>
 
     <main>
         <section>
-            <h2>Usuários</h2>
-
-            <?php
-            while ($dados_usuarios = $result_set_usuarios->fetch(PDO::FETCH_ASSOC)) {
-
-                $nome_user  = $dados_usuarios['nome_user'];
-                $email_user = $dados_usuarios['email_user'];
-                $tipo       = $dados_usuarios['tipo'];
-
-                $template = "
-                <article>
-                    <p><strong>$nome_user</strong></p>
-                    <p>Email: $email_user</p>
-                    <p>Tipo: $tipo</p>
-                </article>
-                ";
-
-                echo $template;
-            }
-            ?>
+            <h2>Admin</h2>
+            <nav>
+                <a href="novidades/listagem-novidades.php" class="botao-rota">Lista de novidades</a>
+                <a href="novidades/nova-novidade.php" class="botao-rota">Postar novidade</a>
+            </nav>
+            <nav>
+                <a href="equipes/listagem-equipe.php" class="botao-rota">Lista equipe</a>
+                <a href="equipes/nova-equipe.php" class="botao-rota">Adicionar equipe</a>
+            </nav>
+            <nav>
+                <a href="circuitos/listagem-circuito.php" class="botao-rota">Lista circuito</a>
+                <a href="circuitos/novo-circuito.php" class="botao-rota">Adicionar circuito</a>
+            </nav>
+            <nav>
+                <a href="usuarios/listagem-user.php" class="botao-rota">Lista usuarios</a>
+                <a href="usuarios/novo-user.php" class="botao-rota">Adicionar usuarios</a>
+            </nav>
         </section>
     </main>
 

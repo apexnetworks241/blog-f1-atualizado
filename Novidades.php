@@ -20,8 +20,6 @@ exigir_login();        // qualquer usuário logado
         <h1><?= $blog_nome ?></h1>
         <nav>
             <a href="index.php">Home</a>
-            <a href="novidades/nova-novidade.html">Adicionar novidades</a>
-            <a href="novidades/listagem-novidades.php">Lista de novidades</a>
         </nav>
     </header>
 

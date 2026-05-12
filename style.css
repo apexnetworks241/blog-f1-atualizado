@@ -1,10 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@400;500;600&display=swap');
 
-/* ============================================
-   F1 BLOG — GLOBAL STYLESHEET
-   Temática: Fórmula 1 | Vermelho · Preto · Moderno
-   ============================================ */
-
 :root {
   --f1-red:        #E10600;
   --f1-red-dark:   #A80400;
@@ -21,10 +16,6 @@
   --radius:        6px;
   --transition:    0.2s ease;
 }
-
-/* ============================================
-   BASE
-   ============================================ */
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -122,10 +113,6 @@ nav a[aria-current="page"] {
   background: rgba(225, 6, 0, 0.1);
 }
 
-/* ============================================
-   TÍTULOS
-   ============================================ */
-
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
   text-transform: uppercase;
@@ -160,10 +147,6 @@ h3 {
   color: var(--f1-text);
 }
 
-/* ============================================
-   FORMULÁRIOS
-   ============================================ */
-
 form {
   background: var(--f1-dark);
   border: 1px solid var(--f1-border);
@@ -174,7 +157,6 @@ form {
   margin: 1.5rem 0;
   display: flex;
   flex-direction: column;
-  gap: 1.1rem;
 }
 
 label {
@@ -184,21 +166,11 @@ label {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--f1-muted);
-  margin-bottom: 0.25rem;
   display: block;
+  margin-top: 0.25rem;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="number"],
-input[type="nome"],
-input[type="pais"],
-input[type="cidade"],
-input[type="extensao"],
-input[type="ano"],
-input[type="ano_gp"],
-input[type="regiao"] {
+input, textarea{
   width: 100%;
   padding: 0.6rem 0.9rem;
   background: var(--f1-surface);
@@ -210,7 +182,9 @@ input[type="regiao"] {
   transition: border-color var(--transition), box-shadow var(--transition);
   outline: none;
   appearance: none;
+  margin-bottom: 1rem;
 }
+
 
 input:focus {
   border-color: var(--f1-red);
@@ -219,30 +193,6 @@ input:focus {
 
 input[type="hidden"] {
   display: none;
-}
-
-input[type="email"],
-input[type="password"],
-input[type="date"] {
-  width: 100%;
-  padding: 0.6rem 0.9rem;
-  background: var(--f1-surface);
-  border: 1px solid var(--f1-border);
-  border-radius: var(--radius);
-  color: var(--f1-text);
-  font-family: var(--font-body);
-  font-size: 0.95rem;
-  transition: border-color var(--transition), box-shadow var(--transition);
-  outline: none;
-  appearance: none;
-  -webkit-appearance: none;
-}
-
-input[type="email"]:focus,
-input[type="password"]:focus,
-input[type="date"]:focus {
-  border-color: var(--f1-red);
-  box-shadow: 0 0 0 3px var(--f1-red-glow);
 }
 
 /* Input date — corrige ícone do calendário no dark mode */
@@ -270,6 +220,7 @@ select {
   background-position: right 0.9rem center;
   padding-right: 2.5rem;
   transition: border-color var(--transition), box-shadow var(--transition);
+  margin-bottom: 1rem;
 }
 
 select:focus {
@@ -281,30 +232,6 @@ select option {
   background: var(--f1-surface);
   color: var(--f1-text);
 }
-
-textarea {
-  width: 100%;
-  padding: 0.6rem 0.9rem;
-  background: var(--f1-surface);
-  border: 1px solid var(--f1-border);
-  border-radius: var(--radius);
-  color: var(--f1-text);
-  font-family: var(--font-body);
-  font-size: 0.95rem;
-  resize: vertical;
-  min-height: 110px;
-  transition: border-color var(--transition), box-shadow var(--transition);
-  outline: none;
-}
-
-textarea:focus {
-  border-color: var(--f1-red);
-  box-shadow: 0 0 0 3px var(--f1-red-glow);
-}
-
-/* ============================================
-   BOTÕES
-   ============================================ */
 
 input[type="submit"],
 button,
@@ -324,6 +251,34 @@ button,
   text-decoration: none;
   display: inline-block;
   align-self: flex-start;
+}
+
+.botao-rota {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  background-color: #E10600;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 1%;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  text-align: center;
+  justify-content: center;
+}
+
+.botao-rota:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(225, 6, 0, 0.35);
+}
+
+.botao-rota:active {
+  transform: translateY(0);
+  box-shadow: none;
 }
 
 input[type="submit"]:hover,
