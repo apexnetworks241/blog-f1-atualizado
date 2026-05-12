@@ -5,7 +5,7 @@ $id_novidades = $_GET['id_novidades'];
 // Conectamos com o banco de dados
 // 3. Conectar com o banco
 
-$conn = new PDO("sqlite:../banco.db");
+$conn = new PDO("sqlite:../../banco.db");
 
 // 4. Prepared Statement
 
@@ -28,7 +28,7 @@ $conteudo = $uma_novidade['conteudo'];
 $data_pub = $uma_novidade['data_pub'];
 $id_novidades = $uma_novidade['id_novidades'];
 
-require "../auth.php"; // ou "auth.php" se for na raiz
+require "../../auth.php"; // ou "auth.php" se for na raiz
 exigir_login();        // qualquer usuário logado
 // exigir_admin();     // só admins (ex: listagem de usuários)
 ?>
@@ -39,7 +39,7 @@ exigir_login();        // qualquer usuário logado
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar equipe</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../../style.css">
 </head>
 <body>
     <header>

@@ -4,7 +4,7 @@
 
 // 3. Conectar com o banco
 
-$conn = new PDO("sqlite:../banco.db");
+$conn = new PDO("sqlite:../../banco.db");
 
 $sql_dados_equipes = "
 SELECT id_equipe, nome_equipe, pais_equipe, base, anos, titulos, descricao_equipe
@@ -14,7 +14,7 @@ ORDER BY id_equipe DESC;
 
 $result_set_equipes = $conn->query($sql_dados_equipes);
 
-require "../auth.php"; // ou "auth.php" se for na raiz
+require "../../auth.php"; // ou "auth.php" se for na raiz
 exigir_login();        // qualquer usuário logado
 // exigir_admin();     // só admins (ex: listagem de usuários)
 ?>
@@ -22,7 +22,7 @@ exigir_login();        // qualquer usuário logado
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../../style.css">
 </head>
 <body>
     <header>

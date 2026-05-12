@@ -4,7 +4,7 @@
 
 // 3. Conectar com o banco
 
-$conn = new PDO("sqlite:../banco.db");
+$conn = new PDO("sqlite:../../banco.db");
 
 $sql_dados_circuitos = "
 SELECT id_circuito, nome_circuito, pais_circuito, cidade, extensao, ano_gp, regiao, descricao_circuito
@@ -14,7 +14,7 @@ ORDER BY id_circuito DESC;
 
 $result_set_circuitos = $conn->query($sql_dados_circuitos);
 
-require "../auth.php"; // ou "auth.php" se for na raiz
+require "../../auth.php"; // ou "auth.php" se for na raiz
 exigir_login();        // qualquer usuário logado
 // exigir_admin();     // só admins (ex: listagem de usuários)
 ?>
@@ -22,7 +22,7 @@ exigir_login();        // qualquer usuário logado
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../../style.css">
 </head>
 <body>
     <header>

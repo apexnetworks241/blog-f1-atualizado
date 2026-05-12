@@ -1,5 +1,5 @@
 <?php
-$conn = new PDO("sqlite:../banco.db");
+$conn = new PDO("sqlite:../../banco.db");
 
 $sql_dados_novidades = "
 SELECT id_novidades, titulo, conteudo, data_pub
@@ -9,7 +9,7 @@ ORDER BY id_novidades DESC;
 
 $result_set_novidades = $conn->query($sql_dados_novidades);
 
-require "../auth.php"; // ou "auth.php" se for na raiz
+require "../../auth.php"; // ou "auth.php" se for na raiz
 exigir_login();        // qualquer usuário logado
 // exigir_admin();     // só admins (ex: listagem de usuários)
 ?>
@@ -17,7 +17,7 @@ exigir_login();        // qualquer usuário logado
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../../style.css">
 </head>
 <body>
     <header>
