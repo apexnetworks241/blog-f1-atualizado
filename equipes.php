@@ -1,5 +1,5 @@
 <?php
-require "equipes_model.php";
+require "Model/equipes_model.php";
 require "auth.php"; // ou "auth.php" se for na raiz
 exigir_login();        // qualquer usuário logado
 // exigir_admin();     // só admins (ex: listagem de usuários)

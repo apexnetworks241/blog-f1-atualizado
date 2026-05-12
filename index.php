@@ -1,7 +1,7 @@
 <?php
 require "auth.php";
 exigir_login();
-require "index_model.php";
+require "Model/index_model.php";
 ?>
 
 <!DOCTYPE html>

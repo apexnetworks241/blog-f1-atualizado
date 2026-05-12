@@ -1,5 +1,5 @@
 <?php
-require "circuitos_model.php";
+require "Model/circuitos_model.php";
 
 require "auth.php"; // ou "auth.php" se for na raiz
 exigir_login();        // qualquer usuário logado

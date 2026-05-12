@@ -1,5 +1,5 @@
 <?php
-require "usuarios_model.php";
+require "Model/usuarios_model.php";
 
 require "auth.php"; // ou "auth.php" se for na raiz
 exigir_login();        // qualquer usuário logado
@@ -27,20 +27,20 @@ exigir_login();        // qualquer usuário logado
         <section>
             <h2>Admin</h2>
             <nav>
-                <a href="novidades/listagem-novidades.php" class="botao-rota">Lista de novidades</a>
-                <a href="novidades/nova-novidade.php" class="botao-rota">Postar novidade</a>
+                <a href="View/novidades/listagem-novidades.php" class="botao-rota">Lista de novidades</a>
+                <a href="View/novidades/nova-novidade.php" class="botao-rota">Postar novidade</a>
             </nav>
             <nav>
-                <a href="equipes/listagem-equipe.php" class="botao-rota">Lista equipe</a>
-                <a href="equipes/nova-equipe.php" class="botao-rota">Adicionar equipe</a>
+                <a href="View/equipes/listagem-equipe.php" class="botao-rota">Lista equipe</a>
+                <a href="View/equipes/nova-equipe.php" class="botao-rota">Adicionar equipe</a>
             </nav>
             <nav>
-                <a href="circuitos/listagem-circuito.php" class="botao-rota">Lista circuito</a>
-                <a href="circuitos/novo-circuito.php" class="botao-rota">Adicionar circuito</a>
+                <a href="View/circuitos/listagem-circuito.php" class="botao-rota">Lista circuito</a>
+                <a href="View/circuitos/novo-circuito.php" class="botao-rota">Adicionar circuito</a>
             </nav>
             <nav>
-                <a href="usuarios/listagem-user.php" class="botao-rota">Lista usuarios</a>
-                <a href="usuarios/novo-user.php" class="botao-rota">Adicionar usuarios</a>
+                <a href="View/usuarios/listagem-user.php" class="botao-rota">Lista usuarios</a>
+                <a href="View/usuarios/novo-user.php" class="botao-rota">Adicionar usuarios</a>
             </nav>
         </section>
     </main>
