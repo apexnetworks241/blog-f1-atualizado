@@ -16,14 +16,6 @@ CREATE TABLE usuarios(
     tipo TEXT CHECK(tipo IN ('admin','usuario')) DEFAULT 'usuario'
 );
 
-INSERT INTO usuarios (nome_user, email_user, senha, tipo)
-VALUES (
-    'Willian',
-    'willian@gmail.com',
-    '123456',
-    'admin'
-);
-
 CREATE TABLE circuitos(
     id_circuito INTEGER PRIMARY KEY AUTOINCREMENT,
     nome_circuito TEXT,
