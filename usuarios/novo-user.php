@@ -17,7 +17,7 @@ exigir_login();        // qualquer usuário logado
         <h1>Blog TI 26</h1>            
         <nav>
             <a href="/">Home</a>
-            <a href="/usuarios.php">Usuarios</a>
+            <a href="/usuarios.php">Voltar</a>
         </nav>
     </header>
 

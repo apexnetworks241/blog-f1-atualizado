@@ -14,10 +14,10 @@ exigir_login();        // qualquer usuário logado
 </head>
 <body>
     <header>
-        <h1>Blog F1 26</h1>            
+        <h1>Blog F1</h1>            
         <nav>
             <a href="/">Home</a>
-            <a href="/circuitos.php">Circuitos</a>
+            <a href="/usuarios.php">Voltar</a>
         </nav>
     </header>
 

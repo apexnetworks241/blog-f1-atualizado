@@ -50,7 +50,7 @@ exigir_login();        // qualquer usuário logado
         <h1>Blog TI 26</h1>
         <nav>
             <a href="/">Home</a>
-            <a href="/circuitos.php">Circuitos</a>
+            <a href="/usuarios.php">Voltar</a>
         </nav>
     </header>
     <h2>Editar circuito</h2>

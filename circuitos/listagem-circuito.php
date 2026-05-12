@@ -29,7 +29,7 @@ exigir_login();        // qualquer usuário logado
         <h1>Listagem de circuito</h1>
             <nav>
                 <a href="/">Home</a>
-                <a href="/circuitos.php">Circuitos</a>
+                <a href="/usuarios.php">Voltar</a>
             </nav>
     </header>
     <table>

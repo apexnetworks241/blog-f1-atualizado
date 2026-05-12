@@ -29,7 +29,7 @@ exigir_login();        // qualquer usuário logado
         <h1>Listagem de usuários</h1>
             <nav>
                 <a href="/">Home</a>
-                <a href="/equipes.php">Equipes</a>
+                <a href="/usuarios.php">Voltar</a>
             </nav>
     </header>
     <table>
