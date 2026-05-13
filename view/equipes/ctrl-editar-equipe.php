@@ -49,7 +49,7 @@ exigir_login();        // qualquer usuário logado
         <h1>Blog F1</h1>
         <nav>
             <a href="/">Home</a>
-            <a href="/usuarios.php">Voltar</a>
+            <a href="/admin.php">Voltar</a>
         </nav>
     </header>
     <h2>Editar equipe</h2>

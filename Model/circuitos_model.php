@@ -14,7 +14,7 @@ $blog_email_adm = "willian@gmail.com";
 $sql_dados_circuitos = "
 SELECT id_circuito, nome_circuito, pais_circuito, cidade, extensao, ano_gp, regiao, descricao_circuito
 FROM circuitos
-ORDER BY id_circuito DESC;
+ORDER BY id_circuito ASC;
 ";
 
 // Rodamos a consulta — nome consistente usado em index.php
