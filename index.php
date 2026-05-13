@@ -34,7 +34,7 @@ require "Model/index_model.php";
             <a href="equipes.php">Equipes</a>
             <a href="circuitos.php">Circuitos</a>
             <?php if (is_admin()): ?>
-            <a href="usuarios.php" style="color: var(--f1-red);">⚙ Admin</a>
+            <a href="admin.php" style="color: var(--f1-red);">⚙ Admin</a>
             <?php endif; ?>
             <a href="logout.php" style="margin-left:auto; color: var(--f1-muted);">Sair (<?= htmlspecialchars($_SESSION['nome_user']) ?>)</a>
         </nav>

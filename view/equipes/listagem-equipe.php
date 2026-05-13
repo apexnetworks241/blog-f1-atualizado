@@ -22,16 +22,18 @@ exigir_login();        // qualquer usuário logado
 <!DOCTYPE html>
 <html>
 <head>
+    <title>Blog F1</title>
     <link rel="stylesheet" href="../../style.css">
 </head>
 <body>
     <header>
-        <h1>Listagem de usuários</h1>
+        <h1>Blog F1</h1>
             <nav>
                 <a href="/">Home</a>
                 <a href="/usuarios.php">Voltar</a>
             </nav>
     </header>
+    <h2>Lista de equipes</h2>
     <table>
         <thead>
             <tr>

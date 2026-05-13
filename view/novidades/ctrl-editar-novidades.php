@@ -38,12 +38,12 @@ exigir_login();        // qualquer usuário logado
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar equipe</title>
+    <title>Blog F1</title>
     <link rel="stylesheet" href="../../style.css">
 </head>
 <body>
     <header>
-        <h1>Blog TI 26</h1>
+        <h1>Blog F1</h1>
         <nav>
             <a href="/">Home</a>
             <a href="/usuarios.php">Voltar</a>
