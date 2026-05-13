@@ -1,7 +1,7 @@
 <?php
 
 // Conectamos com o banco de dados
-$string_de_conexao = "sqlite:../banco.db";
+$string_de_conexao = "sqlite:banco.db";
 
 $conn = new PDO($string_de_conexao);
 
