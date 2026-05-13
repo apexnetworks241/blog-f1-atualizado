@@ -1,5 +1,4 @@
 <?php
-
 // Conectamos com o banco de dados
 $string_de_conexao = "sqlite:banco.db";
 
