@@ -18,7 +18,7 @@ WHERE id_usuario = :id_usuario;
 
 // 3. Conectar com o banco
 
-$conn = new PDO("sqlite:../banco.db");
+$conn = new PDO("sqlite:../../banco.db");
 
 // 4. Prepared Statement
 
@@ -36,6 +36,9 @@ $stmt->bindValue(':id_usuario', $id_usuario);
 $stmt->execute();
 
 // 7. Mostramos a listagem com o usuário atualizado
+ob_start(); // adiciona essa linha no topo
+// ... resto do código ...
+header("Location: /View/usuarios/listagem-user.php");
 
-require "listagem-user.php";
+exit;
 ?>

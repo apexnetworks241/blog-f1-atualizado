@@ -15,7 +15,7 @@ if (strlen($senha) < 6) {
 }
 
 // 3. Conectar com o banco
-$conn = new PDO("sqlite:../banco.db");
+$conn = new PDO("sqlite:../../banco.db");
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 // 4. Verificar se email já existe
@@ -45,6 +45,9 @@ $stmt->bindValue(':tipo',       $tipo);
 $stmt->execute();
 
 // 8. Redirecionar
-header("Location: listagem-user.php");
+ob_start(); // adiciona essa linha no topo
+// ... resto do código ...
+header("Location: /View/usuarios/listagem-user.php");
+
 exit;
 ?>

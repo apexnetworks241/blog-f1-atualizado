@@ -22,7 +22,7 @@ exigir_login();        // qualquer usuário logado
     </header>
 
     <h2>Novo Circuito</h2>
-    <form action="ctrl-novo-circuito.php" method="post">
+    <form action="/Controller/circuitos/ctrl-novo-circuito.php" method="post">
         <label>Nome:</label>
         <input type="text" name="nome_circuito" required>
 

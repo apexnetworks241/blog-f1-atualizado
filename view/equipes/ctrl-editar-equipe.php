@@ -53,7 +53,7 @@ exigir_login();        // qualquer usuário logado
         </nav>
     </header>
     <h2>Editar equipe</h2>
-    <form action="ctrl-atualizar-equipe.php" method="post">
+    <form action="/Controller/equipes/ctrl-atualizar-equipe.php" method="post">
         <label>Nome:</label>
         <input type="text" name="nome_equipe" required value=<?=$nome_equipe?>>
 

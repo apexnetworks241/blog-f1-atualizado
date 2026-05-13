@@ -18,7 +18,7 @@ VALUES (:nome_circuito, :pais_circuito, :cidade, :extensao, :ano_gp, :regiao, :d
 
 // 3. Conectar com o banco
 
-$conn = new PDO("sqlite:../banco.db");
+$conn = new PDO("sqlite:../../banco.db");
 
 // 4. Prepared Statement
 
@@ -44,5 +44,8 @@ $id = $conn->lastInsertId();
 
 // 8. Redirecionamos para a listagem
 
-require "novo-circuito.html";
+ob_start(); // adiciona essa linha no topo
+// ... resto do código ...
+header("Location: /View/circuitos/listagem-circuito.php");
+exit;
 ?>

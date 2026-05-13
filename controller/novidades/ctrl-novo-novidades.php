@@ -15,7 +15,7 @@ VALUES (:titulo, :conteudo, :data_pub);
 
 // 3. Conectar com o banco
 
-$conn = new PDO("sqlite:../banco.db");
+$conn = new PDO("sqlite:../../banco.db");
 
 // 4. Prepared Statement
 
@@ -36,6 +36,9 @@ $stmt->execute();
 $id = $conn->lastInsertId();
 
 // 8. Redirecionamos para a listagem
+ob_start(); // adiciona essa linha no topo
+// ... resto do código ...
+header("Location: /View/novidades/listagem-novidades.php");
 
-require "listagem-novidades.php";
+exit;
 ?>

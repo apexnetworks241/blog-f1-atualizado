@@ -64,7 +64,7 @@ exigir_login();        // qualquer usuário logado
                     <td>$titulos</td>
                     <td>$descricao_equipe</td>
                     <td>
-                    <a href='ctrl-apagar-equipe.php?id_equipe=$id_equipe'>🗑️</a>
+                    <a href='/Controller/equipes/ctrl-apagar-equipe.php?id_equipe=$id_equipe'>🗑️</a>
                     <a href='ctrl-editar-equipe.php?id_equipe=$id_equipe'>✏️</a>
                     </td>
                 </tr>

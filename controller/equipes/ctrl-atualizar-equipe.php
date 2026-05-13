@@ -25,7 +25,7 @@ WHERE id_equipe = :id_equipe;
 
 // 3. Conectar com o banco
 
-$conn = new PDO("sqlite:../banco.db");
+$conn = new PDO("sqlite:../../banco.db");
 
 // 4. Prepared Statement
 
@@ -47,5 +47,9 @@ $stmt->execute();
 
 // 7. Mostramos a listagem com o usuário atualizado
 
-require "listagem-equipe.php";
+
+ob_start(); // adiciona essa linha no topo
+// ... resto do código ...
+header("Location: /View/equipes/listagem-equipe.php");
+exit;
 ?>

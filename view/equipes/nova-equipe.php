@@ -22,7 +22,7 @@ exigir_login();        // qualquer usuário logado
     </header>
 
     <h2>Nova Equipe</h2>
-    <form action="ctrl-nova-equipe.php" method="post">
+    <form action="/Controller/equipes/ctrl-nova-equipe.php" method="post">
         <label>Nome:</label>
         <input type="text" name="nome_equipe" required>
 

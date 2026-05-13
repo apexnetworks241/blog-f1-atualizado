@@ -54,7 +54,7 @@ exigir_login();        // qualquer usuário logado
         </nav>
     </header>
     <h2>Editar circuito</h2>
-    <form action="ctrl-atualizar-circuito.php" method="post">
+    <form action="/Controller/circuitos/ctrl-atualizar-circuito.php" method="post">
         <label>Nome:</label>
         <input type="nome" name="nome_circuito" required value=<?=$nome_circuito?>>
 

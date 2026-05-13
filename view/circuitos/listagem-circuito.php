@@ -68,7 +68,7 @@ exigir_login();        // qualquer usuário logado
                     <td>$regiao</td>
                     <td>$descricao_circuito</td>
                     <td>
-                    <a href='ctrl-apagar-circuito.php?id_circuito=$id_circuito'>🗑️</a>
+                    <a href='/Controller/circuitos/ctrl-apagar-circuito.php?id_circuito=$id_circuito'>🗑️</a>
                     <a href='ctrl-editar-circuito.php?id_circuito=$id_circuito'>✏️</a>
                     </td>
                 </tr>
