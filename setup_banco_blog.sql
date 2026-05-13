@@ -48,3 +48,63 @@ PRAGMA table_info (usuarios);
 PRAGMA table_info (circuitos);
 PRAGMA table_info (equipes);
 PRAGMA table_info (novidades);
+
+
+
+
+/* Lógico_3: */
+
+CREATE TABLE Usuario (
+    nome_user VARCHAR,
+    email_user VARCHAR,
+    tipo_Usuario,_admin_ VARCHAR,
+    senha VARCHAR,
+    id_usuario INTEGER PRIMARY KEY
+);
+
+CREATE TABLE Circuitos (
+    id_circuito INTEGER PRIMARY KEY,
+    nome_circuito VARCHAR,
+    pais_circuito VARCHAR,
+    cidade VARCHAR,
+    extensao VARCHAR,
+    ano_gp VARCHAR,
+    regiao VARCHAR,
+    descricao_circuito VARCHAR,
+    fk_Usuario_id_usuario INTEGER
+);
+
+CREATE TABLE Equipes (
+    id_equipe INTEGER PRIMARY KEY,
+    nome_equipe VARCHAR,
+    pais_equipe VARCHAR,
+    base VARCHAR,
+    status VARCHAR,
+    descricao_equipe VARCHAR,
+    anos VARCHAR,
+    titulos VARCHAR,
+    fk_Usuario_id_usuario INTEGER
+);
+
+CREATE TABLE Novidades (
+    id_novidades INTEGER PRIMARY KEY,
+    titulo VARCHAR,
+    data_pub DATE,
+    conteudo VARCHAR,
+    fk_Usuario_id_usuario INTEGER
+);
+ 
+ALTER TABLE Circuitos ADD CONSTRAINT FK_Circuitos_2
+    FOREIGN KEY (fk_Usuario_id_usuario)
+    REFERENCES Usuario (id_usuario)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE Equipes ADD CONSTRAINT FK_Equipes_2
+    FOREIGN KEY (fk_Usuario_id_usuario)
+    REFERENCES Usuario (id_usuario)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE Novidades ADD CONSTRAINT FK_Novidades_2
+    FOREIGN KEY (fk_Usuario_id_usuario)
+    REFERENCES Usuario (id_usuario)
+    ON DELETE CASCADE;
