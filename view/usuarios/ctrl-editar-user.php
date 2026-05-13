@@ -50,7 +50,7 @@ exigir_login();        // qualquer usuário logado
         </nav>
     </header>
     <h2>Editar usuário</h2>
-    <form action="ctrl-atualizar-user.php" method="post">
+    <form action="/Controller/usuarios/ctrl-atualizar-user.php" method="post">
         <label>Nome:</label>
         <input name="nome_user" value="<?= $nome_user ?>">
         <label>Email:</label>

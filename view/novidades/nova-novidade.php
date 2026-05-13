@@ -23,7 +23,7 @@ exigir_login();        // qualquer usuário logado
 
     <h2>Nova Novidade</h2>
 
-    <form action="ctrl-novo-novidades.php" method="post">
+    <form action="/Controller/novidades/ctrl-novo-novidades.php" method="post">
         <label>Título:</label><br>
         <input type="text" name="titulo" required><br><br>
 

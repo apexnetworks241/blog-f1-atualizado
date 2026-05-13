@@ -11,19 +11,6 @@ require "Model/index_model.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $blog_nome ?></title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        .grid-baixo {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-        }
-
-        @media (max-width: 600px) {
-            .grid-baixo {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -42,20 +29,33 @@ require "Model/index_model.php";
 
     <section>
 
-        <!-- SLIDE 1: Novidades (topo, largura total) -->
-        <article>
-            <h2>Últimas Novidades</h2>
-            <?php while ($novidade = $result_top_novidades->fetch(PDO::FETCH_ASSOC)) { ?>
-                <div>
-                    <h3><?= $novidade['titulo'] ?></h3>
-                    <p><strong>Data:</strong> <?= date('d/m/y', strtotime($novidade['data_pub'])) ?></p>
-                    <p><?= $novidade['conteudo'] ?></p>
-                </div>
-                <hr>
-            <?php } ?>
-        </article>  
+        <article class="slider-wrap">
+            <div class="slider-header">
+                <h2>Últimas Novidades</h2>
+            </div>
 
-        <!-- SLIDES 2 e 3: Equipes e Circuitos lado a lado -->
+            <div class="slider-body">
+                <button class="nav-btn" id="prev">&#8249;</button>
+
+                <div class="slides-container">
+                    <?php $first = true; while ($novidade = $result_top_novidades->fetch(PDO::FETCH_ASSOC)): ?>
+                        <div class="slide <?= $first ? 'active' : '' ?>">
+                            <p class="news-title"><?= htmlspecialchars($novidade['titulo']) ?></p>
+                            <p class="news-date"><span>Data:</span> <?= date('d/m/y', strtotime($novidade['data_pub'])) ?></p>
+                            <p class="news-content"><?= htmlspecialchars($novidade['conteudo']) ?></p>
+                        </div>
+                    <?php $first = false; endwhile; ?>
+                </div>
+
+                <button class="nav-btn" id="next">&#8250;</button>
+            </div>
+
+            <div class="slider-footer">
+                <div class="dots" id="dots"></div>
+                <p class="counter" id="counter"></p>
+            </div>
+        </article>
+
         <div class="grid-baixo">
 
             <article>
@@ -90,5 +90,7 @@ require "Model/index_model.php";
     <footer>
         <?= $blog_nome ?> - <?= $blog_autor ?> - <?= $blog_email_adm ?>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

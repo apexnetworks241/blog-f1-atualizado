@@ -54,7 +54,7 @@ exigir_login();        // qualquer usuário logado
                     <td>$nome_user</td>
                     <td>$email_user</td>
                     <td>
-                        <a href='ctrl-apagar-user.php?id_usuario=$id_usuario'>🗑️</a>
+                        <a href='/Controller/usuarios/ctrl-apagar-user.php?id_usuario=$id_usuario'>🗑️</a>
                         <a href='ctrl-editar-user.php?id_usuario=$id_usuario'>✏️</a>
                     </td>
                 </tr>

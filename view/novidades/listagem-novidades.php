@@ -52,7 +52,7 @@ exigir_login();        // qualquer usuário logado
                     <td>$conteudo</td>
                     <td>$data_pub</td>
                     <td>
-                    <a href='ctrl-apagar-novidades.php?id_novidades=$id_novidades'>🗑️</a>
+                    <a href='/Controller/novidades/ctrl-apagar-novidades.php?id_novidades=$id_novidades'>🗑️</a>
                     <a href='ctrl-editar-novidades.php?id_novidades=$id_novidades'>✏️</a>
                     </td>
                 </tr>

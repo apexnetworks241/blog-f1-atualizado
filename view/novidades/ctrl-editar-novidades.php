@@ -50,7 +50,7 @@ exigir_login();        // qualquer usuário logado
         </nav>
     </header>
     <h2>Editar Novidade</h2>
-    <form action="ctrl-atualizar-novidades.php" method="post">
+    <form action="/Controller/novidades/ctrl-atualizar-novidades.php" method="post">
         <label>Titulo:</label>
         <input type="text" name="titulo" required value=<?=$titulo?>>
 
