@@ -1,15 +1,8 @@
 <?php
-// Recebo o id do usuário a ser editado
 $id_circuito = $_GET['id_circuito'];
-
-// Conectamos com o banco de dados
-// 3. Conectar com o banco
 
 $conn = new PDO("sqlite:../../banco.db");
 
-// 4. Prepared Statement
-
-// SELECT usando id como filtro
 $sql_dados_circuito = "
 SELECT id_circuito, nome_circuito, pais_circuito, cidade, extensao, ano_gp, regiao, descricao_circuito
 FROM circuitos
@@ -20,21 +13,19 @@ $stmt = $conn->prepare($sql_dados_circuito);
 $stmt->bindValue(':id_circuito', $id_circuito);
 $stmt->execute();
 
-// Pegamos os dados do usuário
 $um_circuito = $stmt->fetch(PDO::FETCH_ASSOC);
 
-$nome_circuito  = $um_circuito['nome_circuito'];
-$pais_circuito = $um_circuito['pais_circuito'];
-$cidade = $um_circuito['cidade'];
-$extensao = $um_circuito['extensao'];
-$ano_gp = $um_circuito['ano_gp'];
-$regiao = $um_circuito['regiao'];
+$nome_circuito      = $um_circuito['nome_circuito'];
+$pais_circuito      = $um_circuito['pais_circuito'];
+$cidade             = $um_circuito['cidade'];
+$extensao           = $um_circuito['extensao'];
+$ano_gp             = $um_circuito['ano_gp'];
+$regiao             = $um_circuito['regiao'];
 $descricao_circuito = $um_circuito['descricao_circuito'];
-$id_circuito = $um_circuito['id_circuito'];
+$id_circuito        = $um_circuito['id_circuito'];
 
-require "../../auth.php"; // ou "auth.php" se for na raiz
-exigir_login();        // qualquer usuário logado
-// exigir_admin();     // só admins (ex: listagem de usuários)
+require "../../auth.php";
+exigir_login();
 ?>
 
 <!DOCTYPE html>
@@ -50,33 +41,35 @@ exigir_login();        // qualquer usuário logado
         <h1>Blog F1</h1>
         <nav>
             <a href="/">Home</a>
-            <a href="/admin.php">Voltar</a>
+            <a href="/View/circuitos/listagem-circuito.php">Voltar</a>
         </nav>
     </header>
     <h2>Editar circuito</h2>
     <form action="/Controller/circuitos/ctrl-atualizar-circuito.php" method="post">
+
         <label>Nome:</label>
-        <input type="nome" name="nome_circuito" required value=<?=$nome_circuito?>>
+        <input type="text" name="nome_circuito" required value="<?= htmlspecialchars($nome_circuito) ?>">
 
         <label>Pais:</label>
-        <input type="pais" name="pais_circuito" required value=<?=$pais_circuito?>>
+        <input type="text" name="pais_circuito" required value="<?= htmlspecialchars($pais_circuito) ?>">
 
         <label>Cidade:</label>
-        <input type="cidade" name="cidade" required value=<?=$cidade?>>
-        
+        <input type="text" name="cidade" required value="<?= htmlspecialchars($cidade) ?>">
+
         <label>Tamanho:</label>
-        <input type="extensao" name="extensao" required value=<?=$extensao?>>
-        
+        <input type="text" name="extensao" required value="<?= htmlspecialchars($extensao) ?>">
+
         <label>Temporadas:</label>
-        <input type="ano" name="ano_gp" required value=<?=$ano_gp?>>
+        <input type="number" name="ano_gp" required value="<?= htmlspecialchars($ano_gp) ?>">
 
         <label>Regiao:</label>
-        <input type="regiao" name="regiao" required value=<?=$regiao?>>
+        <input type="text" name="regiao" required value="<?= htmlspecialchars($regiao) ?>">
 
         <label>Descrição:</label>
-        <textarea name="descricao_circuito" rows="4" cols="50">
-<?=$descricao_circuito?></textarea>
-        <input type="hidden" name="id_circuito" value=<?=$id_circuito?>> 
+        <textarea name="descricao_circuito" rows="4" cols="50"><?= htmlspecialchars($descricao_circuito) ?></textarea>
+
+        <input type="hidden" name="id_circuito" value="<?= htmlspecialchars($id_circuito) ?>">
+
         <input type="submit" value="Atualizar">
     </form>
 </body>
